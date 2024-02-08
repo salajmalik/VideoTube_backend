@@ -53,6 +53,7 @@ const registerUser = asyncHandler( async (req,res) =>{
     // check for user creation, if yes return res, if no send error
 
     const {fullName, email, username, password} = req.body  //destructuring
+    //console.log(req);
     console.log("email: ", email);
 
     if([fullName, email, username, password].some((field) => field?.trim() === "")){  //checking if any field in empty
@@ -113,6 +114,7 @@ const loginUser = asyncHandler( async (req,res) =>{
     //send cookie 
 
     const {email, username, password} = req.body
+    console.log(req)
 
     if(!username && !email){
         throw new ApiError(400, "username or password is required")
