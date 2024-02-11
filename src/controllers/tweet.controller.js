@@ -55,8 +55,8 @@ const getUserTweets = asyncHandler(async (req, res) => {
             }
         },{
             $group:{
-                _id:"owner",
-                tweets:{$push:"$tweetContent"}
+                _id:"$owner",
+                tweets:{$push:"$content"}
             }
             
         },{
@@ -66,11 +66,13 @@ const getUserTweets = asyncHandler(async (req, res) => {
             }
         }])
 
-        if(!tweets){
+        const tweetList =  await tweets.exec();
+
+        if(!tweetList || tweetList.length === 0){
             throw new ApiError(400, " You do not have any tweets")
         }
 
-        return res.status(200).json ( new ApiResponse(200, tweets, "Tweets fetched successfully"))
+        return res.status(200).json ( new ApiResponse(200, tweetList, "Tweets fetched successfully"))
     } catch(err){
         throw new ApiError(400, "Error occured in fetching tweets")
     }
