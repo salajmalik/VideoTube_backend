@@ -116,11 +116,6 @@ const updateTweet = asyncHandler(async (req, res) => {
     try {
 
         //const tweetComponent =  await Tweet.findById(tweetId)
-        
-        
-        
-        
-        
         const updatedTweet= await Tweet.findByIdAndUpdate(tweetId, {$set: {content: tweetContent}}, {new:true} )
         if(!updatedTweet){
             throw new ApiError(400, "Unable to update tweet")
