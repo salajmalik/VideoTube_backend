@@ -1,4 +1,4 @@
-#Welcome To VideoTube Repository
+# Welcome To VideoTube Repository
 
 This project is the backend component of a video hosting website, akin to Youtube. It's developed using **Node.js, Express.js, MongoDB, Mongoose, Cloudinary, JWT, bcrypt,** and other technologies.
 
