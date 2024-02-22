@@ -6,5 +6,5 @@ The website provides features such as **User authentication (login, signup), vid
 
 The project adheres to industry-standard practices including **JWT (JSON Web Tokens)** for authentication, **bcrypt** for password hashing, access tokens, refresh tokens, and more.
 
-You can find the project's models [here.](https://app.eraser.io/workspace/41H9iCgQpO8MuOBzbsQg?origin=share)
+You can find the project's model [here.](https://app.eraser.io/workspace/41H9iCgQpO8MuOBzbsQg?origin=share)
 
