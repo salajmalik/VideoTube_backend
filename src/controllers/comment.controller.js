@@ -51,12 +51,12 @@ const updateComment = asyncHandler(async (req, res) => {
         throw new ApiError(400, "Please provide comment ID")
     }
 
-    let comment = await Comment.find(commentId)
+    let comment = await Comment.findById(commentId)
     if(!comment){
         throw new ApiError(400, "Comment not found")
     }
 
-    if(comment.owner.toString()!=req.usr._id){
+    if(comment.owner.toString()!=req.user._id){
         throw new ApiError(400, " Not authorized to update comment content")
     }
 
